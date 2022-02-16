@@ -127,3 +127,16 @@ we have! If you have an idea for a better name let us know. 😊
 [kubeadm]: https://kubernetes.io/docs/reference/setup-tools/kubeadm/
 [oci]: https://www.oracle.com/cloud/compute/
 [oke]: https://www.oracle.com/cloud-native/container-engine-kubernetes/
+
+
+## Autenticação
+
+Use o comando
+
+```
+oci session authenticate
+
+```
+
+Depois em "Enter the name of the profile you would like to create:"
+Digite "DEFAULT"
