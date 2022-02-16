@@ -131,12 +131,24 @@ we have! If you have an idea for a better name let us know. 😊
 
 ## Autenticação
 
-Use o comando
+1. Use o comando `oci session authenticate`
+
+2. O seu navegador vai abrir na tela de autenticação da Oracle, dai basta se autenticar
+
+3. No terminal irá aparecer a seguinte mensagem
 
 ```
-oci session authenticate
+    Completed browser authentication process!
+Enter the name of the profile you would like to create: DEFAULT
+```
+Basta digitar `DEFAULT` e dar enter
+
+Pronto! Você já vai estar autenticado
 
 ```
+Config written to: /home/fausto/.oci/config
 
-Depois em "Enter the name of the profile you would like to create:"
-Digite "DEFAULT"
+    Try out your newly created session credentials with the following example command:
+
+    oci iam region list --config-file /home/fausto/.oci/config --profile DEFAULT --auth security_token
+```
