@@ -76,7 +76,7 @@ Para isso use o comando `sudo touch /home/fausto/.kube/config`
 
 2. Depois copie o conteúdo de `cat /home/fausto/.kube/kubeconfig`
 
-e cole dentro do arquivo `sudo nano /home/fausto/.kube/config` que você acabou de criar.
+e cole dentro do arquivo que você acabou de criar `sudo nano /home/fausto/.kube/config`
 
 3. Pronto! Agora use o comando `kubectl get nodes` para listar os nodes do seu cluster.
 
