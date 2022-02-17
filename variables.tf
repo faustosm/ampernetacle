@@ -14,12 +14,12 @@ Available flex shapes:
 
 variable "shape" {
   type    = string
-  default = "VM.Standard.A1.Flex"
+  default = "VM.Standard.E4.Flex"
 }
 
 variable "how_many_nodes" {
   type    = number
-  default = 4
+  default = 3
 }
 
 variable "availability_domain" {
