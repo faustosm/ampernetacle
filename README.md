@@ -68,12 +68,15 @@ $env:KUBECONFIG="$pwd\kubeconfig"
 kubectl get nodes
 ```
 
-Caso o erro `The connection to the server localhost:8080 was refused - did you specify the right host or port?` apareça, faça o seguinte procedimento.
+Caso surja o erro `The connection to the server localhost:8080 was refused - did you specify the right host or port?` faça o seguinte procedimento:
 
-1. Cria um arquivo chamado `"config"` dentro de `/home/fausto/.kube/`.
+1. Cria um arquivo chamado `"config"` dentro de `/home/fausto/.kube/`
+
 Para isso use o comando `sudo touch /home/fausto/.kube/config`
 
-2. Depois copie o conteúdo de `cat /home/fausto/.kube/kubeconfig` e cole dentro do arquivo `sudo nano /home/fausto/.kube/config` que você acabou de criar.
+2. Depois copie o conteúdo de `cat /home/fausto/.kube/kubeconfig`
+
+e cole dentro do arquivo `sudo nano /home/fausto/.kube/config` que você acabou de criar.
 
 3. Pronto! Agora use o comando `kubectl get nodes` para listar os nodes do seu cluster.
 
