@@ -21,6 +21,27 @@ if you want to develop or test applications on ARM.
 3. Have installed or [install terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/oci-get-started).
 4. Have installed or [install OCI CLI ](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm).
 5. Configure [OCI credentials](https://learn.hashicorp.com/tutorials/terraform/oci-build?in=terraform/oci-get-started).
+
+### Autenticando no Oracle Cloud
+
+1. Use o comando `oci session authenticate`
+2. O seu navegador vai abrir na tela de autenticação da Oracle, dai basta se autenticar
+3. No terminal irá aparecer a seguinte mensagem `Enter a region by index or name(e.g.`, digite `34`
+4. Em seguida na mensagem:
+```
+Completed browser authentication process!
+Enter the name of the profile you would like to create: DEFAULT
+```
+Basta digitar `DEFAULT` e dê enter.
+```
+Config written to: /home/fausto/.oci/config
+
+Try out your newly created session credentials with the following example command:
+
+oci iam region list --config-file /home/fausto/.oci/config --profile DEFAULT --auth security_token
+```
+Pronto! Você já vai estar autenticado.
+
 6. Download this project and enter its folder.
 7. `terraform init`
 8. `terraform apply`
@@ -35,7 +56,11 @@ Linux
 export KUBECONFIG=$PWD/kubeconfig
 kubectl get nodes
 ```
+after
 
+```
+cp kubeconfig /home/fausto/.kube/
+```
 
 Windows
 ```powershell
@@ -43,6 +68,16 @@ $env:KUBECONFIG="$pwd\kubeconfig"
 kubectl get nodes
 ```
 
+Caso o erro `The connection to the server localhost:8080 was refused - did you specify the right host or port?` apareça, faça o seguinte procedimento.
+
+1. Cria um arquivo chamado `"config"` dentro de `/home/fausto/.kube/`.
+Para isso use o comando `sudo touch /home/fausto/.kube/config`
+
+2. Depois copie o conteúdo de `cat /home/fausto/.kube/kubeconfig` e cole dentro do arquivo `sudo nano /home/fausto/.kube/config` que você acabou de criar.
+
+3. Pronto! Agora use o comando `kubectl get nodes` para listar os nodes do seu cluster.
+
+---
 
 The command above should show you 4 nodes, named `node1` to `node4`.
 
@@ -127,28 +162,3 @@ we have! If you have an idea for a better name let us know. 😊
 [kubeadm]: https://kubernetes.io/docs/reference/setup-tools/kubeadm/
 [oci]: https://www.oracle.com/cloud/compute/
 [oke]: https://www.oracle.com/cloud-native/container-engine-kubernetes/
-
-
-## Autenticação
-
-1. Use o comando `oci session authenticate`
-
-2. O seu navegador vai abrir na tela de autenticação da Oracle, dai basta se autenticar
-
-3. No terminal irá aparecer a seguinte mensagem
-
-```
-    Completed browser authentication process!
-Enter the name of the profile you would like to create: DEFAULT
-```
-Basta digitar `DEFAULT` e dar enter
-
-Pronto! Você já vai estar autenticado
-
-```
-Config written to: /home/fausto/.oci/config
-
-    Try out your newly created session credentials with the following example command:
-
-    oci iam region list --config-file /home/fausto/.oci/config --profile DEFAULT --auth security_token
-```
