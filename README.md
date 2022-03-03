@@ -19,7 +19,7 @@ if you want to develop or test applications on ARM.
 1. Create an Oracle Cloud Infrastructure account (just follow [this link][createaccount]).
 2. Have installed or [install kubernetes](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl).
 3. Have installed or [install terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/oci-get-started).
-4. Have installed or [install OCI CLI ](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm).
+4. Have installed or [install OCI CLI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm).
 5. Configure [OCI credentials](https://learn.hashicorp.com/tutorials/terraform/oci-build?in=terraform/oci-get-started).
 
 ### Autenticando no Oracle Cloud
@@ -28,18 +28,25 @@ if you want to develop or test applications on ARM.
 2. O seu navegador vai abrir na tela de autenticação da Oracle, dai basta se autenticar
 3. No terminal irá aparecer a seguinte mensagem `Enter a region by index or name(e.g.`, digite `34`
 4. Em seguida na mensagem:
+
 ```
+
 Completed browser authentication process!
 Enter the name of the profile you would like to create: DEFAULT
+
 ```
+
 Basta digitar `DEFAULT` e dê enter.
+
 ```
+
 Config written to: /home/fausto/.oci/config
 
 Try out your newly created session credentials with the following example command:
 
 oci iam region list --config-file /home/fausto/.oci/config --profile DEFAULT --auth security_token
 ```
+
 Pronto! Você já vai estar autenticado.
 
 6. Download this project and enter its folder.
@@ -79,6 +86,18 @@ Para isso use o comando `sudo touch /home/fausto/.kube/config`
 e cole dentro do arquivo que você acabou de criar `sudo nano /home/fausto/.kube/config`
 
 3. Pronto! Agora use o comando `kubectl get nodes` para listar os nodes do seu cluster.
+
+---
+
+
+
+
+
+
+
+
+
+
 
 ---
 
